@@ -46,8 +46,10 @@ function handleWin() {
     result.classList.add('display')
     if (turnPlayer === 'playerX') {
         wonText.innerText = 'Player X ganhou o jogo'
-    } else {
+    } else if(turnPlayer === 'playerO') {
         wonText.innerText = 'Player O ganhou o jogo'
+    } else if (turnPlayer === '') {
+        wonText.innerText = 'EMPATE! Deu Velha'
     }
     
 }
@@ -75,7 +77,8 @@ function handleBoardClick(ev) {
         turnPlayer = turnPlayer === 'playerX' ? 'playerO' : 'playerX'
         updatePlayer();
     } else {
-        console.log('EMPATE!')
+        turnPlayer();
+        handleWin();
     }
 }
 
