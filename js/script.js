@@ -77,7 +77,7 @@ function handleBoardClick(ev) {
         turnPlayer = turnPlayer === 'playerX' ? 'playerO' : 'playerX'
         updatePlayer();
     } else {
-        turnPlayer();
+        turnPlayer = '';
         handleWin();
     }
 }
