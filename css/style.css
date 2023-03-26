@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap'); 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-color: #FF5B10;
+    --secondary-color: #e75d1d;
+}
+
+body {
+    background: var(--primary-color);
+}
+
+.play-board,
+.select-box,
+.result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.select-box {  
+    background: #fff;
+    padding: 1.25rem 1.5rem 1.5rem;
+    border-radius: .4rem;
+    max-width: 20.625rem;
+    width: 100%;
+}
+
+.select-box.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.select-box header {
+    font-size: 1.43rem;
+    font-weight: 600;
+    margin-bottom: 0.625rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.select-box .title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 1.25rem 0;
+}
+
+.select-box .options {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+
+.options button {
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: .5rem 0;
+    outline: none;
+    border: none;
+    border-radius: .4rem;
+    background: var(--secondary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.options button:hover,
+.result-box .btn button:hover {
+    transform: scale(0.9);
+}
+
+.play-board {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.play-board.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.play-board .details {
+    background: #fff;
+    padding: .43rem;
+    border-radius: .4rem;
+}
+
+.play-board .player-area {
+    margin-top: 1.25rem;
+}
+
+.play-board .details .players {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-board .details span {
+    width: 100%;
+    color: var(--primary-color);
+    border-radius: .4rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: .5rem 0;
+    text-align: center;
+    cursor: default;
+    position: relative;
+    z-index: 5;
+}
+
+.details span:first-child {
+    color: #fff;
+}
+
+.details .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--primary-color);
+    border-radius: .4rem;
+    z-index: 2;
+    transition: all .3s ease;
+}
+
+.players.active span:first-child{
+    color: var(--primary-color);
+}
+
+.players.active span:nth-child(2){
+    color: #fff;
+}
+
+.players.active .slider {
+    left: 50%;
+}
+
+.play-board section {
+    display: flex;
+}
+
+.play-board section span {
+    display: block;
+    margin: 2px;
+    height: 5rem;
+    width: 5rem;
+    background: #fff;
+    border-radius: .4rem;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 5rem;
+    color: var(--primary-color);
+}
+
+.play-board section span.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Result Box */
+
+.result-box {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: .4rem;
+    max-width: 20.625rem;
+    width: 100%;
+    /* display: none; */
+    /* Teste */
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.result-box.display {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.result-box .won-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+.result-box .won-text span {
+    font-weight: 600;
+    margin: 0 .4px;
+}
+
+.result-box .btn {
+    display: flex;
+    justify-content: center;
+    margin: 1.25rem;
+}
+
+.result-box .btn button {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: .5rem 1.25rem;
+    outline: none;
+    border: none;
+    border-radius: .4rem;
+    background: var(--secondary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease;
+}
